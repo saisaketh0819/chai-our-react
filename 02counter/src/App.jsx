@@ -7,8 +7,14 @@ function App() {
   let [counter,setCounter]=useState(5)
   //let counter =5
   const addValue = () =>{
-    //counter = counter+1
-    setCounter(counter+1)
+    if(counter<20){
+      setCounter(counter+1)
+    }
+  }
+  const removeValue = () =>{
+    if(counter>0){
+      setCounter(counter-1)
+    }
   }
   return (
     <>
@@ -16,7 +22,7 @@ function App() {
       <h2>Counter vlaue: {counter}</h2>
       <button onClick={addValue}>Add</button>
       <br/>
-      <button>Remove</button>
+      <button onClick={removeValue}>Remove</button>
     </>
   )
 }
